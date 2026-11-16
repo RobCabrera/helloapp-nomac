@@ -1,0 +1,4 @@
+// Target settings for the Classic fixture.
+#include "Shared.xcconfig"
+INFOPLIST_KEY_NSCameraUsageDescription = Scans receipts
+SWIFT_VERSION = $(inherited)

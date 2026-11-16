@@ -1,0 +1,11 @@
+{
+  "SDKROOT": "xcodebuild reports the path of the SDK installed on the machine; we keep the name as written (iphoneos)",
+  "BUNDLE_LOADER": "expands BUILT_PRODUCTS_DIR, a path under the machine's checkout; we keep $(BUILT_PRODUCTS_DIR) as written",
+  "TEST_HOST": "expands BUILT_PRODUCTS_DIR, a path under the machine's checkout; we keep $(BUILT_PRODUCTS_DIR) as written",
+  "ENABLE_PREVIEWS": {
+    "configs": [
+      "Release"
+    ],
+    "reason": "xcodebuild reports NO for optimized builds whatever the target sets; we show the value the project sets, and the catalog description says Release builds report it off"
+  }
+}

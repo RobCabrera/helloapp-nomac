@@ -1,0 +1,813 @@
+{
+  "projects": [
+    {
+      "app_target": "HelloApp",
+      "folder": "HelloApp",
+      "info": {
+        "CFBundleDisplayName": "Hello Check",
+        "CFBundleIdentifier": "com.xplat.check.hello",
+        "CFBundleShortVersionString": "2.3.1",
+        "CFBundleVersion": "42",
+        "MinimumOSVersion": "17.4",
+        "NSCameraUsageDescription": "Scans check codes",
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "XPCheckMarker": "hello-file-key"
+      },
+      "project": "HelloApp.xcodeproj",
+      "resolved": {
+        "HelloApp": {
+          "Debug": {
+            "ALWAYS_SEARCH_USER_PATHS": {
+              "basic": false,
+              "source": "Project",
+              "value": "NO"
+            },
+            "ASSETCATALOG_COMPILER_APPICON_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "AppIcon"
+            },
+            "CLANG_ENABLE_MODULES": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            },
+            "CLANG_ENABLE_OBJC_ARC": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            },
+            "CODE_SIGN_ENTITLEMENTS": {
+              "basic": true,
+              "source": "Target",
+              "value": "HelloApp/HelloApp.entitlements"
+            },
+            "CODE_SIGN_IDENTITY": {
+              "basic": true,
+              "source": "Target",
+              "value": "Apple Development"
+            },
+            "CODE_SIGN_STYLE": {
+              "basic": true,
+              "source": "Target",
+              "value": "Automatic"
+            },
+            "CURRENT_PROJECT_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "42"
+            },
+            "DEBUG_INFORMATION_FORMAT": {
+              "basic": true,
+              "source": "Project",
+              "value": "dwarf"
+            },
+            "DEVELOPMENT_TEAM": {
+              "basic": true,
+              "source": "Target",
+              "value": "A1B2C3D4E5"
+            },
+            "ENABLE_PREVIEWS": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "ENABLE_TESTABILITY": {
+              "basic": true,
+              "source": "Project",
+              "value": "YES"
+            },
+            "ENABLE_USER_SCRIPT_SANDBOXING": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            },
+            "GCC_OPTIMIZATION_LEVEL": {
+              "basic": false,
+              "source": "Project",
+              "value": "0"
+            },
+            "GENERATE_INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "HelloApp/Info.plist"
+            },
+            "INFOPLIST_KEY_CFBundleDisplayName": {
+              "basic": true,
+              "source": "Target",
+              "value": "Hello Check"
+            },
+            "INFOPLIST_KEY_ITSAppUsesNonExemptEncryption": {
+              "basic": true,
+              "source": "Target",
+              "value": "NO"
+            },
+            "INFOPLIST_KEY_NSCameraUsageDescription": {
+              "basic": false,
+              "source": "Target",
+              "value": "Scans check codes"
+            },
+            "INFOPLIST_KEY_UIApplicationSceneManifest_Generation": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_KEY_UILaunchScreen_Generation": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_KEY_UISupportedInterfaceOrientations": {
+              "basic": true,
+              "source": "Target",
+              "value": "UIInterfaceOrientationPortrait"
+            },
+            "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad": {
+              "basic": true,
+              "source": "Target",
+              "value": "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+            },
+            "IPHONEOS_DEPLOYMENT_TARGET": {
+              "basic": true,
+              "source": "Target",
+              "value": "17.4"
+            },
+            "LD_RUNPATH_SEARCH_PATHS": {
+              "basic": false,
+              "source": "Target",
+              "value": "@executable_path/Frameworks"
+            },
+            "MARKETING_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "2.3.1"
+            },
+            "ONLY_ACTIVE_ARCH": {
+              "basic": true,
+              "source": "Project",
+              "value": "YES"
+            },
+            "PRODUCT_BUNDLE_IDENTIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": "com.xplat.check.hello"
+            },
+            "PRODUCT_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "HelloApp"
+            },
+            "PROVISIONING_PROFILE_SPECIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": ""
+            },
+            "SDKROOT": {
+              "basic": true,
+              "source": "Project",
+              "value": "iphoneos"
+            },
+            "SWIFT_ACTIVE_COMPILATION_CONDITIONS": {
+              "basic": true,
+              "source": "Target",
+              "value": "DEBUG XPLAT_CHECK"
+            },
+            "SWIFT_OPTIMIZATION_LEVEL": {
+              "basic": true,
+              "source": "Project",
+              "value": "-Onone"
+            },
+            "SWIFT_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "6.0"
+            },
+            "TARGETED_DEVICE_FAMILY": {
+              "basic": true,
+              "source": "Target",
+              "value": "1,2"
+            }
+          },
+          "Release": {
+            "ALWAYS_SEARCH_USER_PATHS": {
+              "basic": false,
+              "source": "Project",
+              "value": "NO"
+            },
+            "ASSETCATALOG_COMPILER_APPICON_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "AppIcon"
+            },
+            "CLANG_ENABLE_MODULES": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            },
+            "CLANG_ENABLE_OBJC_ARC": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            },
+            "CODE_SIGN_ENTITLEMENTS": {
+              "basic": true,
+              "source": "Target",
+              "value": "HelloApp/HelloApp.entitlements"
+            },
+            "CODE_SIGN_IDENTITY": {
+              "basic": true,
+              "source": "Target",
+              "value": "Apple Development"
+            },
+            "CODE_SIGN_STYLE": {
+              "basic": true,
+              "source": "Target",
+              "value": "Automatic"
+            },
+            "CURRENT_PROJECT_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "42"
+            },
+            "DEBUG_INFORMATION_FORMAT": {
+              "basic": true,
+              "source": "Project",
+              "value": "dwarf-with-dsym"
+            },
+            "DEVELOPMENT_TEAM": {
+              "basic": true,
+              "source": "Target",
+              "value": "A1B2C3D4E5"
+            },
+            "ENABLE_NS_ASSERTIONS": {
+              "basic": false,
+              "source": "Project",
+              "value": "NO"
+            },
+            "ENABLE_PREVIEWS": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "ENABLE_TESTABILITY": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "ENABLE_USER_SCRIPT_SANDBOXING": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            },
+            "GENERATE_INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "HelloApp/Info.plist"
+            },
+            "INFOPLIST_KEY_CFBundleDisplayName": {
+              "basic": true,
+              "source": "Target",
+              "value": "Hello Check"
+            },
+            "INFOPLIST_KEY_ITSAppUsesNonExemptEncryption": {
+              "basic": true,
+              "source": "Target",
+              "value": "NO"
+            },
+            "INFOPLIST_KEY_NSCameraUsageDescription": {
+              "basic": false,
+              "source": "Target",
+              "value": "Scans check codes"
+            },
+            "INFOPLIST_KEY_UIApplicationSceneManifest_Generation": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_KEY_UILaunchScreen_Generation": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_KEY_UISupportedInterfaceOrientations": {
+              "basic": true,
+              "source": "Target",
+              "value": "UIInterfaceOrientationPortrait"
+            },
+            "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad": {
+              "basic": true,
+              "source": "Target",
+              "value": "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+            },
+            "IPHONEOS_DEPLOYMENT_TARGET": {
+              "basic": true,
+              "source": "Target",
+              "value": "17.4"
+            },
+            "LD_RUNPATH_SEARCH_PATHS": {
+              "basic": false,
+              "source": "Target",
+              "value": "@executable_path/Frameworks"
+            },
+            "MARKETING_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "2.3.1"
+            },
+            "ONLY_ACTIVE_ARCH": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "PRODUCT_BUNDLE_IDENTIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": "com.xplat.check.hello"
+            },
+            "PRODUCT_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "HelloApp"
+            },
+            "PROVISIONING_PROFILE_SPECIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": ""
+            },
+            "SDKROOT": {
+              "basic": true,
+              "source": "Project",
+              "value": "iphoneos"
+            },
+            "SWIFT_ACTIVE_COMPILATION_CONDITIONS": {
+              "basic": true,
+              "source": "Project",
+              "value": "XPLAT_RELEASE"
+            },
+            "SWIFT_COMPILATION_MODE": {
+              "basic": true,
+              "source": "Project",
+              "value": "wholemodule"
+            },
+            "SWIFT_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "6.0"
+            },
+            "TARGETED_DEVICE_FAMILY": {
+              "basic": true,
+              "source": "Target",
+              "value": "1,2"
+            },
+            "VALIDATE_PRODUCT": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            }
+          }
+        }
+      },
+      "scheme": "HelloApp",
+      "unresolved_basic": [
+        "PRODUCT_MODULE_NAME",
+        "SUPPORTED_PLATFORMS",
+        "SUPPORTS_MACCATALYST",
+        "SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD",
+        "SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD",
+        "INFOPLIST_KEY_LSApplicationCategoryType",
+        "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone",
+        "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME",
+        "DEVELOPMENT_ASSET_PATHS",
+        "SWIFT_STRICT_CONCURRENCY",
+        "SWIFT_DEFAULT_ACTOR_ISOLATION"
+      ],
+      "written": [
+        "HelloApp/HelloApp.entitlements",
+        "HelloApp/Info.plist",
+        "HelloApp.xcodeproj/project.pbxproj"
+      ]
+    },
+    {
+      "app_target": "Classic",
+      "folder": "Classic",
+      "info": {
+        "CFBundleDisplayName": "Classic Check",
+        "CFBundleIdentifier": "com.xplat.check.classic",
+        "CFBundleShortVersionString": "3.1",
+        "CFBundleVersion": "8",
+        "MinimumOSVersion": "17.0",
+        "NSCameraUsageDescription": "Scans receipts (edited)",
+        "NSPhotoLibraryUsageDescription": "Picks receipt photos",
+        "UIBackgroundModes": [
+          "audio",
+          "fetch"
+        ],
+        "UIDeviceFamily": [
+          1
+        ],
+        "XPCheckMarker": "classic-file-key"
+      },
+      "project": "Classic.xcodeproj",
+      "resolved": {
+        "Classic": {
+          "Debug": {
+            "CODE_SIGN_ENTITLEMENTS": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic/Classic.entitlements"
+            },
+            "CODE_SIGN_IDENTITY": {
+              "basic": true,
+              "source": "Target",
+              "value": "Apple Development"
+            },
+            "CODE_SIGN_STYLE": {
+              "basic": true,
+              "source": "Target",
+              "value": "Automatic"
+            },
+            "CURRENT_PROJECT_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "8"
+            },
+            "DEVELOPMENT_TEAM": {
+              "basic": true,
+              "source": "Target",
+              "value": "A1B2C3D4E5"
+            },
+            "ENABLE_TESTABILITY": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "GENERATE_INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic/Info.plist"
+            },
+            "INFOPLIST_KEY_CFBundleDisplayName": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic Check"
+            },
+            "INFOPLIST_KEY_NSCameraUsageDescription": {
+              "basic": false,
+              "source": "Target",
+              "value": "Scans receipts (edited)"
+            },
+            "INFOPLIST_KEY_NSPhotoLibraryUsageDescription": {
+              "basic": false,
+              "source": "Target",
+              "value": "Picks receipt photos"
+            },
+            "INFOPLIST_KEY_UILaunchScreen_Generation": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "IPHONEOS_DEPLOYMENT_TARGET": {
+              "basic": true,
+              "source": "Target",
+              "value": "17.0"
+            },
+            "MARKETING_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "3.1"
+            },
+            "ONLY_ACTIVE_ARCH": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "PRODUCT_BUNDLE_IDENTIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": "com.xplat.check.classic"
+            },
+            "PRODUCT_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic"
+            },
+            "PROVISIONING_PROFILE_SPECIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": ""
+            },
+            "SDKROOT": {
+              "basic": true,
+              "source": "Project",
+              "value": "iphoneos"
+            },
+            "SWIFT_ACTIVE_COMPILATION_CONDITIONS": {
+              "basic": true,
+              "source": "Target",
+              "value": "DEBUG XPLAT_CHECK"
+            },
+            "SWIFT_VERSION": {
+              "basic": true,
+              "source": "TargetXcconfig",
+              "value": "6.0"
+            },
+            "TARGETED_DEVICE_FAMILY": {
+              "basic": true,
+              "source": "Target",
+              "value": "1"
+            }
+          },
+          "Release": {
+            "CODE_SIGN_ENTITLEMENTS": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic/Classic.entitlements"
+            },
+            "CODE_SIGN_IDENTITY": {
+              "basic": true,
+              "source": "Target",
+              "value": "Apple Development"
+            },
+            "CODE_SIGN_STYLE": {
+              "basic": true,
+              "source": "Target",
+              "value": "Automatic"
+            },
+            "CURRENT_PROJECT_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "8"
+            },
+            "DEVELOPMENT_TEAM": {
+              "basic": true,
+              "source": "Target",
+              "value": "A1B2C3D4E5"
+            },
+            "ENABLE_TESTABILITY": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "GENERATE_INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic/Info.plist"
+            },
+            "INFOPLIST_KEY_CFBundleDisplayName": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic Check"
+            },
+            "INFOPLIST_KEY_NSCameraUsageDescription": {
+              "basic": false,
+              "source": "Target",
+              "value": "Scans receipts (edited)"
+            },
+            "INFOPLIST_KEY_NSPhotoLibraryUsageDescription": {
+              "basic": false,
+              "source": "Target",
+              "value": "Picks receipt photos"
+            },
+            "INFOPLIST_KEY_UILaunchScreen_Generation": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "IPHONEOS_DEPLOYMENT_TARGET": {
+              "basic": true,
+              "source": "Target",
+              "value": "17.0"
+            },
+            "MARKETING_VERSION": {
+              "basic": true,
+              "source": "Target",
+              "value": "3.1"
+            },
+            "ONLY_ACTIVE_ARCH": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "PRODUCT_BUNDLE_IDENTIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": "com.xplat.check.classic"
+            },
+            "PRODUCT_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "Classic"
+            },
+            "PROVISIONING_PROFILE_SPECIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": ""
+            },
+            "SDKROOT": {
+              "basic": true,
+              "source": "Project",
+              "value": "iphoneos"
+            },
+            "SWIFT_VERSION": {
+              "basic": true,
+              "source": "TargetXcconfig",
+              "value": "6.0"
+            },
+            "TARGETED_DEVICE_FAMILY": {
+              "basic": true,
+              "source": "Target",
+              "value": "1"
+            },
+            "VALIDATE_PRODUCT": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            }
+          }
+        },
+        "ClassicTests": {
+          "Debug": {
+            "BUNDLE_LOADER": {
+              "basic": false,
+              "source": "Target",
+              "value": "$(BUILT_PRODUCTS_DIR)/Classic.app/Classic"
+            },
+            "ENABLE_TESTABILITY": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "GENERATE_INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "ClassicTests/Info.plist"
+            },
+            "IPHONEOS_DEPLOYMENT_TARGET": {
+              "basic": true,
+              "source": "Project",
+              "value": "16.0"
+            },
+            "ONLY_ACTIVE_ARCH": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "PRODUCT_BUNDLE_IDENTIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": "com.example.classic.tests"
+            },
+            "PRODUCT_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "ClassicTests"
+            },
+            "SDKROOT": {
+              "basic": true,
+              "source": "Project",
+              "value": "iphoneos"
+            },
+            "SWIFT_VERSION": {
+              "basic": true,
+              "source": "Project",
+              "value": "6.0"
+            },
+            "TARGETED_DEVICE_FAMILY": {
+              "basic": true,
+              "source": "Default",
+              "value": "1"
+            },
+            "TEST_HOST": {
+              "basic": false,
+              "source": "Target",
+              "value": "$(BUILT_PRODUCTS_DIR)/Classic.app/Classic"
+            }
+          },
+          "Release": {
+            "BUNDLE_LOADER": {
+              "basic": false,
+              "source": "Target",
+              "value": "$(BUILT_PRODUCTS_DIR)/Classic.app/Classic"
+            },
+            "ENABLE_TESTABILITY": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "GENERATE_INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "YES"
+            },
+            "INFOPLIST_FILE": {
+              "basic": true,
+              "source": "Target",
+              "value": "ClassicTests/Info.plist"
+            },
+            "IPHONEOS_DEPLOYMENT_TARGET": {
+              "basic": true,
+              "source": "Project",
+              "value": "16.0"
+            },
+            "ONLY_ACTIVE_ARCH": {
+              "basic": true,
+              "source": "Default",
+              "value": "NO"
+            },
+            "PRODUCT_BUNDLE_IDENTIFIER": {
+              "basic": true,
+              "source": "Target",
+              "value": "com.example.classic.tests"
+            },
+            "PRODUCT_NAME": {
+              "basic": true,
+              "source": "Target",
+              "value": "ClassicTests"
+            },
+            "SDKROOT": {
+              "basic": true,
+              "source": "Project",
+              "value": "iphoneos"
+            },
+            "SWIFT_VERSION": {
+              "basic": true,
+              "source": "Project",
+              "value": "6.0"
+            },
+            "TARGETED_DEVICE_FAMILY": {
+              "basic": true,
+              "source": "Default",
+              "value": "1"
+            },
+            "TEST_HOST": {
+              "basic": false,
+              "source": "Target",
+              "value": "$(BUILT_PRODUCTS_DIR)/Classic.app/Classic"
+            },
+            "VALIDATE_PRODUCT": {
+              "basic": false,
+              "source": "Project",
+              "value": "YES"
+            }
+          }
+        }
+      },
+      "scheme": "Classic",
+      "unresolved_basic": [
+        "PRODUCT_MODULE_NAME",
+        "SUPPORTED_PLATFORMS",
+        "SUPPORTS_MACCATALYST",
+        "SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD",
+        "SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD",
+        "INFOPLIST_KEY_LSApplicationCategoryType",
+        "INFOPLIST_KEY_UIApplicationSceneManifest_Generation",
+        "INFOPLIST_KEY_UISupportedInterfaceOrientations",
+        "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone",
+        "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad",
+        "INFOPLIST_KEY_ITSAppUsesNonExemptEncryption",
+        "ASSETCATALOG_COMPILER_APPICON_NAME",
+        "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME",
+        "ENABLE_PREVIEWS",
+        "DEVELOPMENT_ASSET_PATHS",
+        "SWIFT_STRICT_CONCURRENCY",
+        "SWIFT_DEFAULT_ACTOR_ISOLATION",
+        "SWIFT_OPTIMIZATION_LEVEL",
+        "SWIFT_COMPILATION_MODE",
+        "DEBUG_INFORMATION_FORMAT"
+      ],
+      "written": [
+        "Classic/Classic.entitlements",
+        "Classic/Info.plist",
+        "Classic.xcodeproj/project.pbxproj",
+        "ClassicTests/Info.plist"
+      ]
+    }
+  ]
+}

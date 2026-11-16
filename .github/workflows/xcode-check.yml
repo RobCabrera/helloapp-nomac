@@ -1,0 +1,124 @@
+# Phase 3 Xcode checks P3-16, P3-17, P3-18 (docs/qa/phase3-acceptance.md) on a GitHub-hosted Mac.
+# The projects under check/ were edited in the Linux dev box through crates/xcodeproj (tools/xcode-check/src).
+# No secrets, no signing, no upload: every build runs with CODE_SIGNING_ALLOWED=NO.
+name: xcode-check
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [p3-xcode-check]  # registers the workflow on this branch; the jobs run on dispatch only
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: macos-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: check
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Toolchain
+        run: |
+          sw_vers
+          xcodebuild -version
+          xcode-select -p
+
+      - name: Files we wrote
+        run: python3 -c 'import json; [print(p["folder"] + "/" + w) for p in json.load(open("expected.json"))["projects"] for w in p["written"]]' | tee ../written.txt
+
+      - name: P3-16 xcodebuild -list leaves the files unchanged
+        run: |
+          xcodebuild -list -project HelloApp/HelloApp.xcodeproj
+          xcodebuild -list -project Classic/Classic.xcodeproj
+          git diff --stat --exit-code -- $(cat ../written.txt)
+
+      - name: P3-16 Xcode open and close leaves the files unchanged
+        if: always()
+        timeout-minutes: 12
+        run: |
+          python3 ../tools/xcode.py open HelloApp/HelloApp.xcodeproj
+          python3 ../tools/xcode.py open Classic/Classic.xcodeproj
+          git status --porcelain --untracked-files=all -- . ':!*/xcuserdata/*' ':!*/project.xcworkspace/*'
+          git diff --exit-code -- $(cat ../written.txt)
+          # HelloApp's shared scheme is what Project::create writes (samples/HelloApp is its golden output).
+          git diff --exit-code -- '*.xcscheme'
+
+      - name: P3-17 resolver parity with xcodebuild -showBuildSettings
+        if: always()
+        run: python3 ../tools/compare.py settings .
+
+      - name: P3-16 and P3-18 archive with CODE_SIGNING_ALLOWED=NO
+        if: always()
+        run: |
+          for s in HelloApp Classic; do
+            xcodebuild archive -project "$s/$s.xcodeproj" -scheme "$s" -configuration Release \
+              -destination generic/platform=iOS -archivePath "../archives/$s.xcarchive" \
+              CODE_SIGNING_ALLOWED=NO -quiet
+            plutil -p "../archives/$s.xcarchive/Products/Applications/$s.app/Info.plist"
+          done
+
+      - name: P3-18 archived Info.plist values
+        if: always()
+        run: python3 ../tools/compare.py info . ../archives
+
+      - name: P3-18 plutil -lint every plist we wrote
+        if: always()
+        run: |
+          plists=$(grep -E '\.(plist|entitlements)$' ../written.txt)
+          plutil -lint $plists
+
+      - name: P3-16 no rewrite after the builds either
+        if: always()
+        run: git diff --exit-code -- $(cat ../written.txt) '*.xcscheme'
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: check
+          path: |
+            check/xcode-build-settings.json
+            ui-logs
+            archives/*.xcarchive/Products/Applications/*.app/Info.plist
+
+  signing:
+    # Xcode's own "Automatically manage signing" switch, driven by UI scripting (best effort). Non-blocking: Xcode's
+    # first-launch windows change between runner images and can stop the script before the toggle (run 43806212447).
+    # Read its result in the job log and artifact; the `check` job is the gate.
+    if: github.event_name == 'workflow_dispatch'
+    continue-on-error: true
+    runs-on: macos-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: check
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Toolchain
+        run: xcodebuild -version
+
+      - name: Turn on automatic signing in Xcode
+        timeout-minutes: 12
+        run: python3 ../tools/xcode.py signing SignHello/HelloApp.xcodeproj ../ui-logs
+
+      - name: Compare Xcode's result with ours
+        if: always()
+        run: |
+          cp SignHello/HelloApp.xcodeproj/project.pbxproj ../ui-logs/xcode-automatic.pbxproj
+          # Known difference (docs/ux/phase3-project-editor.md section 12, open): with no signed-in account the
+          # runner's Xcode clears DEVELOPMENT_TEAM, where we keep the team. Only the team value is masked; the
+          # line must still be present on both sides and every other line must match.
+          team='s/DEVELOPMENT_TEAM = [^;]*;/DEVELOPMENT_TEAM = <team>;/'
+          diff -u <(sed -E "$team" signing/expected-automatic.pbxproj) \
+                  <(sed -E "$team" SignHello/HelloApp.xcodeproj/project.pbxproj)
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: signing-ui
+          path: ui-logs
