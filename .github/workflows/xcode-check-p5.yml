@@ -1,0 +1,90 @@
+# Phase 5 Xcode checks P5-150 to P5-154 (docs/qa/phase5-acceptance.md) on a GitHub-hosted Mac with Xcode 26.6.
+# Everything under check/ was written in the Linux dev box by crates/xcassets and crates/xcodeproj
+# (tools/xcode-check/src/bin/p5.rs). No secrets, no signing, no upload: the archive runs with CODE_SIGNING_ALLOWED=NO.
+# Files Xcode writes go only to the 1-day artifact, never back into a repository.
+name: xcode-check-p5
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [p5-xcode-check]  # registers the workflow on this branch; the jobs run on dispatch only
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: macos-26
+    timeout-minutes: 50
+    defaults:
+      run:
+        working-directory: check
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Xcode 26.6
+        run: |
+          app=$(ls -d /Applications/Xcode_26.6*.app 2>/dev/null | head -1 || true)
+          if [ -n "$app" ]; then sudo xcode-select -s "$app"; fi
+          sw_vers
+          xcodebuild -version
+          xcodebuild -version | head -1 | grep -qx 'Xcode 26.6' || { echo "FAIL Xcode 26.6 required"; exit 1; }
+
+      - name: P5-150 template catalog equals our writer
+        run: python3 ../tools/assets.py template .
+
+      - name: Xcode opening the corpus rewrites nothing
+        if: always()
+        timeout-minutes: 8
+        run: |
+          python3 ../tools/assets.py snapshot . Corpus.xcassets
+          python3 ../tools/assets.py snapshot . XcodeNew.xcassets
+          python3 ../tools/xcode.py open-catalog Corpus.xcassets ../ui-logs/open || echo "UI scripting stopped early (exit $?); comparing what Xcode wrote"
+          python3 ../tools/assets.py unchanged . ../results
+
+      - name: P5-150 Xcode duplicates each set from its model
+        if: always()
+        timeout-minutes: 10
+        run: |
+          python3 ../tools/xcode.py asset-duplicate Corpus.xcassets ../ui-logs/duplicate || echo "UI scripting stopped early (exit $?); comparing what Xcode wrote"
+          python3 ../tools/assets.py rewrite . ../results
+
+      - name: Xcode's new items equal ours
+        if: always()
+        timeout-minutes: 10
+        run: |
+          python3 ../tools/xcode.py asset-new XcodeNew.xcassets ../ui-logs/new || echo "UI scripting stopped early (exit $?); comparing what Xcode wrote"
+          python3 ../tools/assets.py new . ../results
+
+      - name: Restore our files
+        if: always()
+        # Xcode adds the files it creates to the git index, so reset the index too.
+        run: |
+          git reset -q --hard HEAD && git clean -ffdxq .
+          git status --short | head -20
+
+      - name: P5-153 plutil on our binary plists
+        if: always()
+        run: python3 ../tools/assets.py plists . ../results
+
+      - name: P5-151 actool compile
+        if: always()
+        run: python3 ../tools/assets.py actool . ../results
+
+      - name: P5-152 archive HelloApp
+        if: always()
+        run: |
+          xcodebuild archive -project HelloApp/HelloApp.xcodeproj -scheme HelloApp -configuration Release \
+            -destination generic/platform=iOS -archivePath ../archives/HelloApp.xcarchive \
+            CODE_SIGNING_ALLOWED=NO -quiet
+          python3 ../tools/assets.py archive . ../archives/HelloApp.xcarchive ../results
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: p5-check
+          retention-days: 1
+          path: |
+            results
+            ui-logs

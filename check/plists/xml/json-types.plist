@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>String</key>
+	<string>plain</string>
+	<key>Unicode</key>
+	<string>café 日本 😀</string>
+	<key>Empty</key>
+	<string></string>
+	<key>True</key>
+	<true/>
+	<key>False</key>
+	<false/>
+	<key>Small</key>
+	<integer>7</integer>
+	<key>Negative</key>
+	<integer>-42</integer>
+	<key>Wide</key>
+	<integer>4294967296</integer>
+	<key>Max</key>
+	<integer>9223372036854775807</integer>
+	<key>Real</key>
+	<real>1.5</real>
+	<key>Array</key>
+	<array>
+		<string>a</string>
+		<integer>1</integer>
+		<false/>
+	</array>
+	<key>Nested</key>
+	<dict>
+		<key>Inner</key>
+		<dict>
+			<key>Deep</key>
+			<string>yes</string>
+		</dict>
+	</dict>
+	<key>Shared</key>
+	<array>
+		<string>same</string>
+		<string>same</string>
+	</array>
+</dict>
+</plist>

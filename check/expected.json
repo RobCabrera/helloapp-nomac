@@ -1,0 +1,190 @@
+{
+  "corpus": {
+    "controls": [
+      "ZOrder.imageset",
+      "ZComplete.imageset",
+      "ZGamut.imageset",
+      "ZEmpty.imageset",
+      "ZColors.colorset",
+      "ZIcon.appiconset",
+      "ZMissing.imageset",
+      "ZSlash.dataset"
+    ],
+    "ours": [
+      "AppIcon.appiconset/Contents.json",
+      "Bits.colorset/Contents.json",
+      "Color.colorset/Contents.json",
+      "Comp-automatic.imageset/Contents.json",
+      "Comp-gpu-optimized-best.imageset/Contents.json",
+      "Comp-gpu-optimized-smallest.imageset/Contents.json",
+      "Comp-lossless.imageset/Contents.json",
+      "Comp-lossy.imageset/Contents.json",
+      "Config.dataset/Contents.json",
+      "Contents.json",
+      "Data.dataset/Contents.json",
+      "Devices.imageset/Contents.json",
+      "Float.colorset/Contents.json",
+      "Folder/Contents.json",
+      "Hex.colorset/Contents.json",
+      "IconAny.appiconset/Contents.json",
+      "Icons/Badge.imageset/Contents.json",
+      "Icons/Contents.json",
+      "Image.imageset/Contents.json",
+      "KeptColor.colorset/Contents.json",
+      "KeptContrast.imageset/Contents.json",
+      "KeptGamut.imageset/Contents.json",
+      "KeptRegrid.imageset/Contents.json",
+      "Legacy.appiconset/Contents.json",
+      "Notes.dataset/Contents.json",
+      "Plain/Contents.json",
+      "Plain/Inside.colorset/Contents.json",
+      "Shape.imageset/Contents.json",
+      "Single.imageset/Contents.json",
+      "Star.imageset/Contents.json",
+      "Tablet.colorset/Contents.json",
+      "Vector.imageset/Contents.json"
+    ]
+  },
+  "hello": {
+    "accent": "Brand",
+    "icon": "AppIcon",
+    "info": {
+      "XPCheckMarker": "p5-file-key"
+    },
+    "settings": {
+      "Count": 7,
+      "Flags": [
+        true
+      ],
+      "Mode": "edited"
+    }
+  },
+  "icons": [
+    "AppIcon.appiconset/Contents.json",
+    "Contents.json"
+  ],
+  "plists": {
+    "binary/all-types.plist": {
+      "Array": [
+        "a",
+        1,
+        false
+      ],
+      "Data": {
+        "$data": "AAECAwRYUGxhdA=="
+      },
+      "Date": {
+        "$date": "2026-11-19T12:34:56Z"
+      },
+      "Empty": "",
+      "EmptyData": {
+        "$data": ""
+      },
+      "False": false,
+      "Max": 9223372036854775807,
+      "Negative": -42,
+      "Nested": {
+        "Inner": {
+          "Deep": "yes"
+        }
+      },
+      "Real": 1.5,
+      "Shared": [
+        "same",
+        "same"
+      ],
+      "Small": 7,
+      "String": "plain",
+      "True": true,
+      "Unicode": "café 日本 😀",
+      "Wide": 4294967296
+    },
+    "binary/json-types.plist": {
+      "Array": [
+        "a",
+        1,
+        false
+      ],
+      "Empty": "",
+      "False": false,
+      "Max": 9223372036854775807,
+      "Negative": -42,
+      "Nested": {
+        "Inner": {
+          "Deep": "yes"
+        }
+      },
+      "Real": 1.5,
+      "Shared": [
+        "same",
+        "same"
+      ],
+      "Small": 7,
+      "String": "plain",
+      "True": true,
+      "Unicode": "café 日本 😀",
+      "Wide": 4294967296
+    },
+    "xml/all-types.plist": {
+      "Array": [
+        "a",
+        1,
+        false
+      ],
+      "Data": {
+        "$data": "AAECAwRYUGxhdA=="
+      },
+      "Date": {
+        "$date": "2026-11-19T12:34:56Z"
+      },
+      "Empty": "",
+      "EmptyData": {
+        "$data": ""
+      },
+      "False": false,
+      "Max": 9223372036854775807,
+      "Negative": -42,
+      "Nested": {
+        "Inner": {
+          "Deep": "yes"
+        }
+      },
+      "Real": 1.5,
+      "Shared": [
+        "same",
+        "same"
+      ],
+      "Small": 7,
+      "String": "plain",
+      "True": true,
+      "Unicode": "café 日本 😀",
+      "Wide": 4294967296
+    },
+    "xml/json-types.plist": {
+      "Array": [
+        "a",
+        1,
+        false
+      ],
+      "Empty": "",
+      "False": false,
+      "Max": 9223372036854775807,
+      "Negative": -42,
+      "Nested": {
+        "Inner": {
+          "Deep": "yes"
+        }
+      },
+      "Real": 1.5,
+      "Shared": [
+        "same",
+        "same"
+      ],
+      "Small": 7,
+      "String": "plain",
+      "True": true,
+      "Unicode": "café 日本 😀",
+      "Wide": 4294967296
+    }
+  }
+}
